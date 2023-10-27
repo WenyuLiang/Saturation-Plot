@@ -1,12 +1,12 @@
 CC=g++
 GCC=gcc
-INCLUDE=-I/usr/local/include  
+INCLUDE=-I/share/home/liangwy/biotool/htslib 
 CFLAGS=-g -O3 -Wall -Wextra -funroll-loops -march=native
 CXXFLAGS=$(CFLAGS) -std=c++17
-TARGETS=satu2 readmarker saturation
-OBJS=satu2.o readmarker.o saturation.o 
+TARGETS=satu2  
+OBJS=satu2.o  
 BINDIR=/usr/local/bin
-LDFLAGS = -L/usr/lib64 -L/usr/local/lib -lhts -lz -lbz2 -lpthread -lrt 
+LDFLAGS = -L/share/home/liangwy/biotool/htslib -lhts -lz -lbz2 -lpthread -lrt 
 all: $(TARGETS)
 
 satu2: satu2.o
