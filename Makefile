@@ -1,12 +1,12 @@
 CC=g++
 GCC=gcc
-INCLUDE=-I/share/home/liangwy/biotool/htslib 
+INCLUDE=-I../htslib 
 CFLAGS=-g -O3 -Wall -Wextra -funroll-loops -march=native
 CXXFLAGS=$(CFLAGS) -std=c++17
 TARGETS=satu2  
 OBJS=satu2.o  
 BINDIR=/usr/local/bin
-LDFLAGS = -L/share/home/liangwy/biotool/htslib -lhts -lz -lbz2 -lpthread -lrt 
+LDFLAGS = -L../htslib -lhts -lz -lbz2 -lpthread -lrt -lcurl
 all: $(TARGETS)
 
 satu2: satu2.o
@@ -31,3 +31,4 @@ clean:
 
 format:
 	clang-format -i --style=GNU *.cpp *.h
+
